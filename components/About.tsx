@@ -8,7 +8,7 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="py-12 sm:py-16 bg-white text-primary px-4"
+      className="py-12 sm:py-16 bg-secondary text-primary flex flex-col items-center px-4"
     >
       <div className="max-w-3xl mx-auto">
         <motion.h2
@@ -37,6 +37,13 @@ export default function About() {
           <li>Backend: Node.js, Express</li>
           <li>Other: Git, Docker</li>
         </ul>
+        <motion.a
+          href="/projects"
+          whileHover={{ scale: 1.07, backgroundColor: "#3b82f6" }}
+          className="bg-primary text-white px-6 py-2 rounded shadow hover:bg-primary-light transition font-semibold"
+        >
+          Read More
+        </motion.a>
       </div>
     </motion.section>
   );

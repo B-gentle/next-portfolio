@@ -1,18 +1,6 @@
 'use client'
+import { projects } from '@/lib/contants'
 import { motion } from 'framer-motion'
-
-const projects = [
-  {
-    name: "Project One",
-    desc: "Brief description of the project and its technologies.",
-    link: "#",
-  },
-  {
-    name: "Project Two",
-    desc: "Brief description of the project and its technologies.",
-    link: "#",
-  },
-]
 
 export default function Projects() {
   return (

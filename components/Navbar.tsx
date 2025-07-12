@@ -3,14 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/icon.png";
 import { motion } from "framer-motion";
+import { navLinks } from "@/lib/contants";
 
 export default function Navbar() {
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-    { href: "/contact", label: "Contact" },
-  ];
 
   return (
     <motion.nav
