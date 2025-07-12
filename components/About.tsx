@@ -1,5 +1,5 @@
-'use client'
-import { motion } from 'framer-motion'
+"use client";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -27,7 +27,10 @@ export default function About() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mb-4 text-base sm:text-lg"
         >
-          [Briefly introduce yourself here. Mention your skills, experience, and what makes you passionate about technology.]
+          Hello! I&#39;m a{" "}
+          <span className="font-semibold">MERN Stack Developer</span> passionate
+          about building fast, scalable, and user-friendly web applications. I
+          specialize in:
         </motion.p>
         <ul className="list-disc list-inside space-y-1">
           <li>Frontend: React, Next.js, Tailwind</li>
@@ -36,5 +39,5 @@ export default function About() {
         </ul>
       </div>
     </motion.section>
-  )
+  );
 }

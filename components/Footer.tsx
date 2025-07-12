@@ -15,7 +15,7 @@ export default function Footer() {
       {/* Social icons */}
       <div className="flex gap-8 my-8">
         <a
-          href="https://twitter.com/"
+          href="https://x.com/B_Gentle12"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
@@ -23,7 +23,7 @@ export default function Footer() {
           <FaTwitter size={30} />
         </a>
         <a
-          href="mailto:eyo@example.com"
+          href="mailto:brighteyo16@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
@@ -31,7 +31,7 @@ export default function Footer() {
           <SiGmail size={30} />
         </a>
         <a
-          href="https://linkedin.com/"
+          href="https://www.linkedin.com/in/bright-eyo-48a29a163/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
@@ -39,7 +39,7 @@ export default function Footer() {
           <FaLinkedin size={30} />
         </a>
         <a
-          href="https://github.com/"
+          href="https://github.com/B-gentle"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
