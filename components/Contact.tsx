@@ -22,7 +22,7 @@ export default function Contact() {
     <section className="w-full flex flex-col md:flex-row min-h-screen" id="contact">
       {/* Left side - Contact Info */}
       <motion.div
-        className="w-full md:w-1/2 bg-secondary flex flex-col justify-center px-8 py-16"
+        className="w-full md:w-1/2 bg-white flex flex-col justify-center px-8 py-16"
         variants={leftVariants}
         initial="hidden"
         whileInView="visible"
