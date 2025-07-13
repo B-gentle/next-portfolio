@@ -1,37 +1,53 @@
-'use client'
-import { motion } from 'framer-motion'
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import image from '@/assets/image.png';
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, scale: 0.95, y: 24 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.9, type: 'spring' }}
-      className="min-h-[60vh] flex flex-col justify-center items-center bg-background text-primary px-4 text-center"
-    >
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4"
+    <section className="min-h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 py-12 bg-blue-50">
+      {/* Text Content */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center md:text-left md:w-1/2"
       >
-        Hello, I&#39;m Eyo Bright
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="text-lg sm:text-xl md:text-2xl mb-8"
+        <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
+          Hi, I&apos;m Bright 👋
+        </h1>
+        <p className="mt-4 text-lg text-blue-800">
+          A passionate <strong>MERN Stack Developer</strong> specializing in Express.js, Node.js, React.js, Next.js, TailwindCSS, Ant Design, ShadcnUI, MongoDB, Prisma, and SQL.
+        </p>
+        <div className="mt-6">
+          <a
+            href="#projects"
+            className="bg-blue-900 text-white px-6 py-2 rounded-md shadow-md hover:bg-blue-800 transition"
+          >
+            View My Work
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Image */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="mb-10 md:mb-0 md:w-1/2 flex justify-center"
       >
-        A passionate developer building web experiences
-      </motion.p>
-      <motion.a
-        href="/projects"
-        whileHover={{ scale: 1.07, backgroundColor: '#3b82f6' }}
-        className="bg-primary text-white px-6 py-2 rounded shadow hover:bg-primary-light transition font-semibold"
-      >
-        View Projects
-      </motion.a>
-    </motion.section>
-  )
-}
+        <div className="w-48 h-48 md:w-64 md:h-64 relative">
+          <Image
+            src={image}
+            alt="Bright Eyo"
+            fill
+            className="object-cover rounded-full shadow-xl border-4 border-white"
+          />
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
