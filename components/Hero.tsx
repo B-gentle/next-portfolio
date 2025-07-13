@@ -1,8 +1,10 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import image from '@/assets/image.png';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import image from "@/assets/image.png";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 const Hero = () => {
   return (
@@ -17,9 +19,44 @@ const Hero = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
           Hi, I&apos;m Bright 👋
         </h1>
-        <p className="mt-4 text-lg text-blue-800">
-          A passionate <strong>MERN Stack Developer</strong> specializing in Express.js, Node.js, React.js, Next.js, TailwindCSS, Ant Design, ShadcnUI, MongoDB, Prisma, and SQL.
+        <p className="mt-4 text-lg font-[800] text-[2rem] leading-[1.2]">
+          A passionate <strong>Full Stack Developer</strong> and{" "}
+          <strong>Mentor.</strong>
         </p>
+        <div className="flex gap-8 my-8">
+          <a
+            href="https://x.com/B_Gentle12"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2351DC] hover:text-gray-300 transition rounded-full border border-[#2351DC] p-2"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="mailto:brighteyo16@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2351DC] hover:text-gray-300 transition rounded-full border border-[#2351DC] p-2"
+          >
+            <SiGmail />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/bright-eyo-48a29a163/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2351DC] hover:text-gray-300 transition rounded-full border border-[#2351DC] p-2"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/B-gentle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2351DC] hover:text-gray-300 transition rounded-full border border-[#2351DC] p-2"
+          >
+            <FaGithub />
+          </a>
+        </div>
         <div className="mt-6">
           <a
             href="/projects"

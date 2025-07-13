@@ -9,7 +9,7 @@ import {
   SiTailwindcss,
   SiAntdesign,
   SiPrisma,
-//   SiTypescript,
+  SiTypescript,
 } from "react-icons/si";
 
 export default function AboutMe() {
@@ -46,6 +46,9 @@ export default function AboutMe() {
           </li>
           <li className="flex items-center gap-2">
             <SiNextdotjs className="text-black" /> Next.js
+          </li>
+          <li className="flex items-center gap-2">
+            <SiTypescript className="text-black" /> TypeScript
           </li>
           <li className="flex items-center gap-2">
             <SiTailwindcss className="text-sky-400" /> TailwindCSS

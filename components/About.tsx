@@ -8,9 +8,9 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="py-12 sm:py-16 bg-secondary text-primary flex flex-col items-center px-4"
+      className="py-12 sm:py-16 bg-secondary px-4"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto flex flex-col items-center">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -27,18 +27,13 @@ export default function About() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mb-4 text-base sm:text-lg"
         >
-          I&#39;m a{" "}
-          <span className="font-semibold">Full Stack Developer</span> passionate
-          about building fast, scalable, and user-friendly web applications. I
-          specialize in:
+          I&#39;m a passionate{" "}
+          <span className="font-semibold">Full Stack Developer,</span>{" "}
+          passionate about building fast, scalable, and user-friendly web
+          applications. I specialize in Express.js, Node.js, React.js...
         </motion.p>
-        <ul className="list-disc list-inside space-y-1">
-          <li>Frontend: React, Next.js, Tailwind</li>
-          <li>Backend: Node.js, Express</li>
-          <li>Other: Git, Docker</li>
-        </ul>
         <motion.a
-          href="/projects"
+          href="/about"
           whileHover={{ scale: 1.07, backgroundColor: "#3b82f6" }}
           className="bg-primary text-white px-6 py-2 rounded shadow hover:bg-primary-light transition font-semibold"
         >
