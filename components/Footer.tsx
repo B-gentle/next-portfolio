@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="text-gray-200 text-lg mt-4 font-medium">
+      <div className="text-gray-200 md:text-lg mt-4 font-medium p-2 text-center">
         BeeTime Technologies © {currentYear} | All Rights Reserved
       </div>
     </footer>

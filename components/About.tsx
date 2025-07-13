@@ -25,7 +25,7 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mb-4 text-base sm:text-lg"
+          className="mb-4 text-base text-center sm:text-lg"
         >
           I&#39;m a passionate{" "}
           <span className="font-semibold">Full Stack Developer,</span>{" "}
