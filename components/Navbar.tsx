@@ -60,10 +60,10 @@ export default function Navbar() {
           <h2 className="text-xl font-bold text-blue-900">Menu</h2>
         </div>
         <nav className="flex flex-col space-y-4 text-blue-700 font-medium">
-          <a href="#home" onClick={toggleNav} className="hover:text-blue-900">Home</a>
-          <a href="#about" onClick={toggleNav} className="hover:text-blue-900">About</a>
-          <a href="#projects" onClick={toggleNav} className="hover:text-blue-900">Projects</a>
-          <a href="#contact" onClick={toggleNav} className="hover:text-blue-900">Contact</a>
+          <a href="home" onClick={toggleNav} className="hover:text-blue-900">Home</a>
+          <a href="about" onClick={toggleNav} className="hover:text-blue-900">About</a>
+          <a href="projects" onClick={toggleNav} className="hover:text-blue-900">Projects</a>
+          <a href="contact" onClick={toggleNav} className="hover:text-blue-900">Contact</a>
         </nav>
       </motion.div>
       )}

@@ -23,7 +23,7 @@ const Hero = () => {
           A passionate <strong>Full Stack Developer</strong> and{" "}
           <strong>Mentor.</strong>
         </p>
-        <div className="flex gap-8 my-8">
+        <div className="flex gap-8 my-8 justify-center md:justify-start">
           <a
             href="https://x.com/B_Gentle12"
             target="_blank"
