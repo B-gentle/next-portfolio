@@ -11,6 +11,7 @@ import {
   SiPrisma,
   SiTypescript,
 } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export default function AboutMe() {
   return (
@@ -64,6 +65,9 @@ export default function AboutMe() {
           </li>
           <li className="flex items-center gap-2">
             <FaDatabase className="text-gray-600" /> SQL
+          </li>
+          <li className="flex items-center gap-2">
+            <TbBrandReactNative className="text-gray-600" /> React Native
           </li>
         </motion.ul>
 

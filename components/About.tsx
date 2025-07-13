@@ -29,8 +29,8 @@ export default function About() {
         >
           I&#39;m a passionate{" "}
           <span className="font-semibold">Full Stack Developer,</span>{" "}
-          passionate about building fast, scalable, and user-friendly web
-          applications. I specialize in Express.js, Node.js, React.js...
+          passionate about building fast, scalable, and user-friendly web and mobile
+          applications. I specialize in technologies like Express.js, Node.js, React.js...
         </motion.p>
         <motion.a
           href="/about"
