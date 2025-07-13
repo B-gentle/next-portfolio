@@ -19,9 +19,9 @@ const Hero = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
           Hi, I&apos;m Bright 👋
         </h1>
-        <p className="mt-4 text-lg font-[800] text-[2rem] leading-[1.2]">
-          A passionate <strong>Full Stack Developer</strong> and{" "}
-          <strong>Mentor.</strong>
+        <p className="mt-4 text-2xl font-semibold leading-[1.2]">
+          A passionate <strong>Full Stack <br className="hidden md:block" />
+          Developer</strong>{" "} and <strong>Mentor.</strong>
         </p>
         <div className="flex gap-8 my-8 justify-center md:justify-start">
           <a

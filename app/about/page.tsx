@@ -25,7 +25,7 @@ export default function AboutMe() {
         <h1 className="text-5xl font-bold mb-6">About Me</h1>
         <p className="text-lg leading-relaxed mb-6 text-textSecondary">
           Hello! I&apos;m a{" "}
-          <span className="font-semibold">MERN Stack Developer</span> passionate
+          <span className="font-semibold">Full Stack Developer</span> passionate
           about building fast, scalable, and user-friendly web applications. I
           specialize in:
         </p>

@@ -63,7 +63,7 @@ export default function Navbar() {
           <Link href="/" onClick={toggleNav} className="hover:text-blue-900">Home</Link>
           <Link href="/about" onClick={toggleNav} className="hover:text-blue-900">About</Link>
           <Link href="/projects" onClick={toggleNav} className="hover:text-blue-900">Projects</Link>
-          <Link href="/contact" onClick={toggleNav} className="hover:text-blue-900">Contact</Link>
+          <Link href="/#contact" onClick={toggleNav} className="hover:text-blue-900">Contact</Link>
         </nav>
       </motion.div>
       )}
