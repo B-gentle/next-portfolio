@@ -14,15 +14,15 @@ import {
 
 export default function AboutMe() {
   return (
-    <div className="min-h-screen bg-blue-50 text-blue-950 py-10 px-4 md:px-16">
+    <div className="min-h-screen bg-secondary py-10 px-4 md:px-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-6 text-blue-900">About Me</h1>
-        <p className="text-lg leading-relaxed mb-6">
+        <h1 className="text-5xl font-bold mb-6">About Me</h1>
+        <p className="text-lg leading-relaxed mb-6 text-textSecondary">
           Hello! I&apos;m a{" "}
           <span className="font-semibold">MERN Stack Developer</span> passionate
           about building fast, scalable, and user-friendly web applications. I
