@@ -9,13 +9,19 @@ export const projects = [
   {
     name: "Koloz",
     desc: "Brief description of the project and its technologies.",
-    github: "",
-    link: ""
+    github: "https://github.com/B-gentle/koloz",
+    link: "https://koloz.netlify.app",
   },
   {
     name: "SSMS",
     desc: "Smarter school management system - A system built for management of schools: grading, attendance, online fee payment etc.",
     github: "",
-    link: "#",
+    link: "https://sheyasolutionslcc.com",
+  },
+   {
+    name: "PMS",
+    desc: "Project management system - A system designed to facilitate project planning, tracking, and collaboration.",
+    github: "",
+    link: "https://pms.flgwebpay.com",
   },
 ];

@@ -22,7 +22,7 @@ const Hero = () => {
         </p>
         <div className="mt-6">
           <a
-            href="#projects"
+            href="/projects"
             className="bg-blue-900 text-white px-6 py-2 rounded-md shadow-md hover:bg-blue-800 transition"
           >
             View My Work

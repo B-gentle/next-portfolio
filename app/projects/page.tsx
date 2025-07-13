@@ -1,6 +1,6 @@
-'use client'
-import { projects } from '@/lib/contants'
-import { motion } from 'framer-motion'
+"use client";
+import { projects } from "@/lib/contants";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
@@ -34,11 +34,32 @@ export default function Projects() {
             >
               <h3 className="text-lg sm:text-xl font-bold mb-2">{p.name}</h3>
               <p className="mb-2 text-base">{p.desc}</p>
-              <a href={p.link} className="text-primary underline font-medium">View on GitHub</a>
+              <div className="flex gap-2 mt-2">
+                {p.github && p.github !== "" && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition"
+                  >
+                    GitHub
+                  </a>
+                )}
+                {p.link && p.link !== "#" && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition"
+                  >
+                    Live Site
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
     </motion.section>
-  )
+  );
 }
