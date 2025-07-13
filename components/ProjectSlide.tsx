@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/lib/contants";
-import { shuffleArray, filterWithImage } from "@/lib/utils"; // <-- Import the utility
+import { shuffleArray, filterWithImage } from "@/lib/utils"; 
 
 const variants = {
   enter: (direction: number) => ({
@@ -108,7 +108,7 @@ export default function ProjectSlider() {
 
       {/* View All Button */}
       <Link href="/projects" className="mt-10">
-        <button className="bg-primary text-white px-8 py-3 rounded-xl font-semibold text-lg shadow hover:bg-primary-light transition">
+        <button className="bg-primary text-white px-8 py-3 rounded font-semibold text-lg shadow hover:bg-primary-light transition">
           View All Projects
         </button>
       </Link>
