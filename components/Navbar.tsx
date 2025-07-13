@@ -50,25 +50,22 @@ export default function Navbar() {
       </motion.nav>
       {/* Mobile Menu */}
       {navOpen && (
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: "auto" }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden bg-white shadow px-4 py-4 space-y-4 text-blue-700 font-medium"
-        >
-          <a href="#home" onClick={toggleNav} className="block">
-            Home
-          </a>
-          <a href="#about" onClick={toggleNav} className="block">
-            About
-          </a>
-          <a href="#projects" onClick={toggleNav} className="block">
-            Projects
-          </a>
-          <a href="#contact" onClick={toggleNav} className="block">
-            Contact
-          </a>
-        </motion.div>
+       <motion.div
+        initial={{ x: '-100%' }}
+        animate={{ x: navOpen ? 0 : '-100%' }}
+        transition={{ type: 'tween', duration: 0.3 }}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-6 md:hidden ${navOpen ? 'block' : 'hidden'}`}
+      >
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-xl font-bold text-blue-900">Menu</h2>
+        </div>
+        <nav className="flex flex-col space-y-4 text-blue-700 font-medium">
+          <a href="#home" onClick={toggleNav} className="hover:text-blue-900">Home</a>
+          <a href="#about" onClick={toggleNav} className="hover:text-blue-900">About</a>
+          <a href="#projects" onClick={toggleNav} className="hover:text-blue-900">Projects</a>
+          <a href="#contact" onClick={toggleNav} className="hover:text-blue-900">Contact</a>
+        </nav>
+      </motion.div>
       )}
     </>
   );
