@@ -8,7 +8,7 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="py-12 sm:py-16 bg-secondary px-4"
+      className="py-12 sm:py-16 px-4"
     >
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         <motion.h2
