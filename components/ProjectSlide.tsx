@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
@@ -22,25 +22,41 @@ const variants = {
 };
 
 export default function ProjectSlider() {
+  function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+  return isMobile;
+}
+
   const projectsWithImages = shuffleArray(filterWithImage(projects)).slice(
     0,
     3
   );
+  const isMobile = useIsMobile();
+  const slidesToShow = isMobile ? 1 : 2;
   const [[page, direction], setPage] = useState([0, 0]);
-  const project = projectsWithImages[page];
+  // const project = projectsWithImages[page];
 
-  const paginate = (newDirection: number) => {
+    const visibleProjects = projectsWithImages.slice(page * slidesToShow, page * slidesToShow + slidesToShow);
+    const maxPage = Math.ceil(projectsWithImages.length / slidesToShow);
+
+ const paginate = (newDirection: number) => {
     setPage(([p]) => {
       let next = p + newDirection;
-      if (next < 0) next = projectsWithImages.length - 1;
-      if (next >= projectsWithImages.length) next = 0;
+      if (next < 0) next = maxPage - 1;
+      if (next >= maxPage) next = 0;
       return [next, newDirection];
     });
   };
 
   return (
     <div className="w-full flex flex-col items-center py-12 bg-secondary">
-      <div className="w-full max-w-xl flex items-center justify-center relative">
+      <div className="w-full max-w-4xl flex items-center justify-center relative">
         {/* Left Arrow */}
         <button
           className="absolute left-0 top-1/2 -translate-y-1/2 bg-white hover:bg-blue-100 text-primary rounded-full p-3 shadow z-10"
@@ -51,7 +67,7 @@ export default function ProjectSlider() {
         </button>
         {/* Slider */}
         <AnimatePresence custom={direction} mode="wait">
-          <motion.div
+         <motion.div
             key={page}
             custom={direction}
             variants={variants}
@@ -59,27 +75,29 @@ export default function ProjectSlider() {
             animate="center"
             exit="exit"
             transition={{ type: "spring", duration: 0.6 }}
-            className="w-full flex flex-col items-center bg-white rounded-xl shadow-lg p-6 mx-10"
+            className={`w-full flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 mx-10 gap-8`}
           >
-            <Image
-              src={project.image}
-              alt={project.name}
-              className="w-full h-48 object-cover rounded-lg mb-6"
-              width={100}
-              height={100}
-            />
-            <h3 className="text-2xl font-bold mb-2 text-primary">
-              {project.name}
-            </h3>
-            <p className="text-gray-700 mb-4 text-center">{project.desc}</p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 underline font-semibold"
-            >
-              Visit Website
-            </a>
+           {visibleProjects.map((project) => (
+              <div key={project.name} className="flex-1 flex flex-col items-center">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-48 object-cover rounded-lg mb-6"
+                  width={100}
+                  height={100}
+                />
+                <h3 className="text-2xl font-bold mb-2 text-primary">{project.name}</h3>
+                <p className="text-gray-700 mb-4 text-center">{project.desc.slice(0, 100)}...</p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 underline font-semibold"
+                >
+                  Visit Website
+                </a>
+              </div>
+            ))}
           </motion.div>
         </AnimatePresence>
         {/* Right Arrow */}
@@ -93,15 +111,13 @@ export default function ProjectSlider() {
       </div>
 
       {/* Slider Dots */}
-      <div className="flex gap-2 mt-6">
-        {projectsWithImages.map((_, idx) => (
+     <div className="flex gap-2 mt-6">
+        {Array.from({ length: maxPage }).map((_, idx) => (
           <button
             key={idx}
             onClick={() => setPage([idx, idx > page ? 1 : -1])}
-            className={`w-3 h-3 rounded-full ${
-              idx === page ? "bg-primary" : "bg-blue-200"
-            } transition`}
-            aria-label={`Show project ${idx + 1}`}
+            className={`w-3 h-3 rounded-full ${idx === page ? "bg-primary" : "bg-blue-200"} transition`}
+            aria-label={`Show slide ${idx + 1}`}
           />
         ))}
       </div>
