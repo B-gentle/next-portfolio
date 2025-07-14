@@ -85,9 +85,9 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.4, delay: 0.4 }}
         >
-          <SiGmail size={48} className="text-primary" />
+          <SiGmail className="text-primary" size={32} />
           <div>
-            <a href="mailto:brighteyo16@gmail.com" className="text-xl font-semibold italic text-black">brighteyo16@gmail.com</a>
+            <a href="mailto:info@beetechnologies.ng" className="font-semibold italic text-xl text-black">info@beetechnologies.ng</a>
             <p className="text-base text-black">Send a Message anytime</p>
           </div>
         </motion.div>
@@ -99,9 +99,9 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.4, delay: 0.5 }}
         >
-          <FaWhatsapp size={48} className="text-primary" />
+          <FaWhatsapp className="text-primary" size={32} />
           <div>
-            <a href="https://wa.me/2349020533101" className="text-xl font-semibold text-black">+234-9020-533-101</a>
+            <a href="https://wa.me/2349020533101" className="font-semibold text-xl text-black">+234-9020-533-101</a>
             <p className="text-base text-black">Message me anytime</p>
           </div>
         </motion.div>

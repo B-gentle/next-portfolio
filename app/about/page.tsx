@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { FaNodeJs, FaReact, FaDatabase } from "react-icons/fa";
@@ -86,6 +86,11 @@ export default function AboutMe() {
             performance, scalability, and a strong user experience. I leverage
             modern tools and libraries to build responsive and accessible
             applications.
+            <br />
+            <br />
+            In addition to building software, I also serve as a{" "}
+            <strong>tech mentor and consultant</strong>, guiding aspiring
+            developers and helping businesses make informed technical decisions.
           </p>
         </motion.div>
       </motion.div>

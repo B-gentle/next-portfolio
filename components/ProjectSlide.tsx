@@ -78,21 +78,21 @@ export default function ProjectSlider() {
             className={`w-full flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg p-6 mx-10 gap-8`}
           >
            {visibleProjects.map((project) => (
-              <div key={project.name} className="flex-1 flex flex-col items-center">
+              <div key={project.name} className="flex-1 flex flex-col items-center md:shadow">
                 <Image
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-48 object-cover rounded-lg mb-6"
+                  className="w-full h-48 object-cover rounded-lg mb-6 md:shadow"
                   width={100}
                   height={100}
                 />
                 <h3 className="text-2xl font-bold mb-2 text-primary">{project.name}</h3>
-                <p className="text-gray-700 mb-4 text-center">{project.desc.slice(0, 100)}...</p>
+                <p className="text-gray-700 mb-4 text-center p-2">{project.desc.slice(0, 100)}...</p>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 underline font-semibold"
+                  className="text-blue-500 underline font-semibold p-2"
                 >
                   Visit Website
                 </a>

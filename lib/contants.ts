@@ -1,6 +1,7 @@
 import koloz from "@/assets/koloz.png";
 import ssms from "@/assets/ssms.png";
-import gvi from "@/assets/gvi.png"
+import gvi from "@/assets/gvi.png";
+import pms from "@/assets/pms.png";
 
 export const navLinks = [
   { href: "/", label: "Home" },
@@ -12,7 +13,7 @@ export const navLinks = [
 export const projects = [
   {
     name: "Koloz",
-    desc: "Brief description of the project and its technologies.",
+    desc: "An online software as a service demo platform - Where software services are showcased for users.",
     github: "https://github.com/B-gentle/koloz",
     link: "https://koloz.netlify.app",
     image: koloz,
@@ -27,9 +28,9 @@ export const projects = [
   {
     name: "PMS",
     desc: "Project management system - A system designed to facilitate project planning, tracking, and collaboration.",
-    github: "",
+    github: "https://github.com/B-gentle/projectMgtSys",
     link: "https://pms.flgwebpay.com",
-    image: "",
+    image: pms,
   },
   {
     name: "GVI",

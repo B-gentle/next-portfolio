@@ -20,7 +20,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
         >
-          <FaTwitter size={30} />
+          <FaTwitter size={25} />
         </a>
         <a
           href="mailto:brighteyo16@gmail.com"
@@ -28,7 +28,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
         >
-          <SiGmail size={30} />
+          <SiGmail size={25} />
         </a>
         <a
           href="https://www.linkedin.com/in/bright-eyo-48a29a163/"
@@ -36,7 +36,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
         >
-          <FaLinkedin size={30} />
+          <FaLinkedin size={25} />
         </a>
         <a
           href="https://github.com/B-gentle"
@@ -44,7 +44,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-white hover:text-gray-300 transition rounded-full border border-gray-200 p-3"
         >
-          <FaGithub size={30} />
+          <FaGithub size={25} />
         </a>
       </div>
 
