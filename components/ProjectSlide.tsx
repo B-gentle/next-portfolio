@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/lib/contants";
-import { shuffleArray, filterWithImage } from "@/lib/utils"; 
+import { filterWithImage } from "@/lib/utils"; 
 
 const variants = {
   enter: (direction: number) => ({
@@ -33,7 +33,7 @@ export default function ProjectSlider() {
   return isMobile;
 }
 
-  const projectsWithImages = shuffleArray(filterWithImage(projects)).slice(
+  const projectsWithImages = filterWithImage(projects).slice(
     0,
     3
   );
