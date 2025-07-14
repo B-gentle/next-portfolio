@@ -1,25 +1,59 @@
-'use client'
-import { FaTwitter, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
-import { SiGmail } from 'react-icons/si'
-import { motion } from 'framer-motion'
+"use client";
+import { FaTwitter, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 export default function Contact() {
   // Animation variants (without transition for type safety)
   const leftVariants = {
     hidden: { opacity: 0, x: -40 },
     visible: { opacity: 1, x: 0 },
-  }
+  };
   const rightVariants = {
     hidden: { opacity: 0, x: 40 },
     visible: { opacity: 1, x: 0 },
-  }
+  };
   const iconVariants = {
     hidden: { opacity: 0, scale: 0.7 },
     visible: { opacity: 1, scale: 1 },
-  }
+  };
+
+  const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+setLoading(true);
+    if (form.current) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+        )
+        .then(
+          (result) => {
+            setLoading(false);
+            alert("Message sent successfully!");
+            console.log(result.text);
+          },
+          (error) => {
+            setLoading(false);
+            alert("Failed to send message." + error.text);
+          }
+        );
+      form.current.reset();
+    }
+  };
 
   return (
-    <section className="w-full flex flex-col md:flex-row min-h-screen" id="contact">
+    <section
+      className="w-full flex flex-col md:flex-row min-h-screen"
+      id="contact"
+    >
       {/* Left side - Contact Info */}
       <motion.div
         className="w-full md:w-1/2 bg-white flex flex-col justify-center px-8 py-16"
@@ -29,7 +63,9 @@ export default function Contact() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.7, type: "spring" }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Get In Touch</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+          Get In Touch
+        </h2>
         <p className="md:text-xl mb-8 text-black">
           You Can contact me with the following medium
         </p>
@@ -87,7 +123,12 @@ export default function Contact() {
         >
           <SiGmail className="text-primary" size={32} />
           <div>
-            <a href="mailto:info@beetechnologies.ng" className="font-semibold italic text-xl text-black">info@beetechnologies.ng</a>
+            <a
+              href="mailto:info@beetechnologies.ng"
+              className="font-semibold italic text-xl text-black"
+            >
+              info@beetechnologies.ng
+            </a>
             <p className="text-base text-black">Send a Message anytime</p>
           </div>
         </motion.div>
@@ -101,7 +142,12 @@ export default function Contact() {
         >
           <FaWhatsapp className="text-primary" size={32} />
           <div>
-            <a href="https://wa.me/2349020533101" className="font-semibold text-xl text-black">+234-9020-533-101</a>
+            <a
+              href="https://wa.me/2349020533101"
+              className="font-semibold text-xl text-black"
+            >
+              +234-9020-533-101
+            </a>
             <p className="text-base text-black">Message me anytime</p>
           </div>
         </motion.div>
@@ -122,6 +168,8 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7 }}
+          ref={form}
+          onSubmit={sendEmail}
         >
           <motion.h3
             className="text-3xl md:text-2xl font-bold mb-2 text-[#FFFFFFB2] opacity-80"
@@ -144,36 +192,42 @@ export default function Contact() {
           <div className="mb-6">
             <motion.input
               type="text"
-              className="w-full bg-transparent border-b border-white text-white text-lg py-2 focus:outline-none focus:border-blue-200 placeholder:text-white placeholder:opacity-80"
+              className="w-full bg-transparent border-b border-white text-white text-lg p-2 focus:outline-none focus:border-blue-200 placeholder:text-white placeholder:opacity-80"
               placeholder="Enter Full Name"
               whileFocus={{ scale: 1.04, borderColor: "#3b82f6" }}
+              name="from_name"
+              required
             />
           </div>
           <div className="mb-6">
             <motion.input
               type="email"
-              className="w-full bg-transparent border-b border-white text-white text-lg py-2 focus:outline-none focus:border-blue-200 placeholder:text-white placeholder:opacity-80"
+              className="w-full bg-transparent border-b border-white text-white text-lg p-2 focus:outline-none focus:border-blue-200 placeholder:text-white placeholder:opacity-80"
               placeholder="Enter email address"
               whileFocus={{ scale: 1.04, borderColor: "#3b82f6" }}
+              name="reply_to"
+              required
             />
           </div>
           <div className="mb-8">
             <motion.textarea
               rows={3}
-              className="w-full bg-transparent border-b border-white text-white text-lg py-2 focus:outline-none focus:border-blue-200 placeholder:text-white placeholder:opacity-80 resize-none"
+              className="w-full bg-transparent border-b border-white text-white text-lg p-2 focus:outline-none focus:border-blue-200 placeholder:text-white placeholder:opacity-80 resize-none"
               placeholder="Write A Message"
               whileFocus={{ scale: 1.04, borderColor: "#3b82f6" }}
+              name="message"
+              required
             />
           </div>
           <motion.button
             type="submit"
-            className="w-full bg-white text-blue-700 font-bold py-4 rounded-xl text-xl hover:bg-blue-100 transition"
+            className="w-full bg-white text-primary font-semibold py-4 rounded-xl text-xl hover:bg-blue-100 transition"
             whileHover={{ scale: 1.05, backgroundColor: "#e0e7ff" }}
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </motion.button>
         </motion.form>
       </motion.div>
     </section>
-  )
+  );
 }

@@ -12,18 +12,18 @@ export const navLinks = [
 
 export const projects = [
   {
-    name: "Koloz",
-    desc: "An online software as a service demo platform - Where software services are showcased for users.",
-    github: "https://github.com/B-gentle/koloz",
-    link: "https://koloz.netlify.app",
-    image: koloz,
-  },
-  {
     name: "SSMS",
     desc: "Smarter school management system - A system built for management of schools: grading, attendance, online fee payment etc.",
     github: "https://github.com/B-gentle/smss",
     link: "https://sheyasolutionslcc.com",
     image: ssms,
+  },
+  {
+    name: "Koloz",
+    desc: "An online software as a service demo platform - Where software services are showcased for users.",
+    github: "https://github.com/B-gentle/koloz",
+    link: "https://koloz.netlify.app",
+    image: koloz,
   },
   {
     name: "PMS",
@@ -38,5 +38,12 @@ export const projects = [
     github: "",
     link: "https://gviltd.com",
     image: gvi,
+  },
+  {
+    name: "Children Global",
+    desc: "Children Global - An NGO site focused on improving the lives of children through education and healthcare.",
+    github: "",
+    link: "https://children-global.org",
+    image: "",
   },
 ];
