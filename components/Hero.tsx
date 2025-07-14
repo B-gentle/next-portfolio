@@ -16,7 +16,7 @@ const Hero = () => {
         transition={{ duration: 0.6 }}
         className="text-center md:text-left md:w-1/2"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-900">
+        <h1 className="text-4xl md:text-5xl font-bold text-primary">
           Hi, I&apos;m Bright 👋
         </h1>
         <p className="mt-4 text-2xl font-semibold leading-[1.2]">

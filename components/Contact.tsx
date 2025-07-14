@@ -51,7 +51,7 @@ setLoading(true);
 
   return (
     <section
-      className="w-full flex flex-col md:flex-row min-h-screen"
+      className="w-full flex flex-col md:flex-row min-h-screen overflow-hidden"
       id="contact"
     >
       {/* Left side - Contact Info */}
